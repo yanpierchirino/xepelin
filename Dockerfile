@@ -33,7 +33,5 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 
 COPY ./vendor                       /mnt/vendor-addons
 COPY ./src                          /mnt/src-addons/src
-COPY ./vendor/odoo/ce/addons        /var/lib/odoo/addons/15.0
-COPY ./vendor/odoo/ce/odoo/addons   /usr/lib/python3/dist-packages/odoo/addons
 
 USER odoo
