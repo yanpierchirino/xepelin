@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.9'
 
 services:
   erp:
@@ -18,23 +18,24 @@ services:
       - ./src:/mnt/src-addons/src
       - ./vendor:/mnt/vendor-addons
     environment:
+      - WDB_SOCKET_SERVER=wdb
+      - WDB_SOCKET_PORT=19840
+      - WDB_WEB_SERVER=localhost:1984
       - ERP_DB_HOST=db
       - ERP_DB_PORT=5432
       - ERP_DB_USER=odoo
       - ERP_DB_PASSWORD=odoo
       - ERP_LIMIT_TIME_CPU=5600
       - ERP_LIMIT_TIME_REAL=7200
-      - ERP_PROXY_MODE=True
+      - ERP_PROXY_MODE=False
       - ERP_WORKERS=0
       - ERP_ADMIN_PASSWD=super-secret-pass
-      - WDB_SOCKET_SERVER=wdb
-      - WDB_SOCKET_PORT=19840
-      - WDB_WEB_SERVER=localhost:1984
+      - ERP_ADDONS_PATH=/mnt,/mnt/src-addons/src
     networks:
       - webapp
 
   db:
-    image: postgres:12
+    image: postgres:14
     container_name: psql
     ports:
       - "5432:5432"
