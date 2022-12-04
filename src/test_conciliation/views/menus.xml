@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="test_conciliation_menu"
+        name="Test Conciliation"
+        web_icon="test_conciliation,static/description/icon.png"/>
+
+    <menuitem
+        id="res_master_menu"
+        name="Master Data"
+        parent="test_conciliation_menu"
+        action="res_master_action_window"
+        sequence="1"/>
+
+</odoo>
