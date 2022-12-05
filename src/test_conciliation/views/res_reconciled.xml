@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_reconciled_tree" model="ir.ui.view">
+        <field name="name">res.reconciled.tree</field>
+        <field name="model">res.reconciled</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree string="Conciliados" sample="1" editable="bottom" create="false" edit="false" >
+                <field name="complement_id"/>
+                <field name="type"/>
+                <field name="account"/>
+                <field name="master_id"/>
+                <field name="date"/>
+                <field name="amount"/>
+                <field name="bank_id"/>
+                <field name="country_id"/>
+                <field name="currency_id"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_reconciled_form" model="ir.ui.view">
+        <field name="name">res.reconciled.form</field>
+        <field name="model">res.reconciled</field>
+        <field name="arch" type="xml">
+          <form string="Conciliados" create="false" edit="false" delete="false">
+            <sheet>
+                <group>
+                    <group>
+                        <field name="complement_id"/>
+                        <field name="type"/>
+                        <field name="account"/>
+                        <field name="master_id"/>
+                        <field name="date"/>
+                    </group>
+                    <group>
+                        <field name="amount"/>
+                        <field name="bank_id"/>
+                        <field name="country_id"/>
+                        <field name="currency_id"/>
+                        <field name="company_id"/>
+                    </group>
+                </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="res_reconciled_action_window">
+      <field name="name">Conciliados</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">res.reconciled</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+              Crear un nuevo registro...
+          </p>
+      </field>
+    </record>
+
+</odoo>

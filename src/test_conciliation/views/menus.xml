@@ -8,9 +8,23 @@
 
     <menuitem
         id="res_master_menu"
-        name="Master Data"
+        name="Master"
         parent="test_conciliation_menu"
         action="res_master_action_window"
         sequence="1"/>
+
+    <menuitem
+        id="res_complement_menu"
+        name="Complementos"
+        parent="test_conciliation_menu"
+        action="res_complement_action_window"
+        sequence="2"/>
+
+    <menuitem
+        id="res_reconciled_menu"
+        name="Conciliados"
+        parent="test_conciliation_menu"
+        action="res_reconciled_action_window"
+        sequence="3"/>
 
 </odoo>

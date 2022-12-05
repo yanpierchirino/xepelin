@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ir_cron_update_country_id" model="ir.cron">
+        <field name="name">Master Data: Update Country ID</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="active" eval="False"/>
+        <field name="model_id" ref="model_res_master"/>
+        <field name="code">model.update_country_id(2)</field>
+        <field name="state">code</field>
+    </record>
+
+</odoo>
