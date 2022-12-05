@@ -1,5 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_res_master,res_master,model_res_master,,1,1,1,1
-access_res_complement,res_complement,model_res_complement,,1,1,1,1
-access_res_reconciled,res_reconciled,model_res_reconciled,,1,1,1,1
+access_res_master_user,res_master_user,model_res_master,test_conciliation.group_conciliation_user,1,1,1,0
+access_res_complement_user,res_complement_user,model_res_complement,test_conciliation.group_conciliation_user,1,1,1,0
+access_res_reconciled_user,res_reconciled_user,model_res_reconciled,test_conciliation.group_conciliation_user,1,1,1,0
+access_res_master_manager,res_master_manager,model_res_master,test_conciliation.group_conciliation_manager,1,1,1,1
+access_res_complement_manager,res_complement_manager,model_res_complement,test_conciliation.group_conciliation_manager,1,1,1,1
+access_res_reconciled_manager,res_reconciled_manager,model_res_reconciled,test_conciliation.group_conciliation_manager,1,1,1,1
 access_testdata_import_wizard,testdata_import_wizard,model_testdata_import_wizard,,1,1,1,1

@@ -12,6 +12,7 @@
     'images': [],
     'depends': ['base'],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'data/cron.xml',
         'wizards/testdata_import.xml',

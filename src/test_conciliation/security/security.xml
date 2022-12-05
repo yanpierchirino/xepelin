@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record model="ir.module.category" id="module_category_conciliation">
+            <field name="name">Test Conciliación</field>
+            <field name="description">Nivel de acceso a modulo Test Conciliación</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="group_conciliation_user" model="res.groups">
+            <field name="name">Usuario</field>
+            <field name="category_id" ref="test_conciliation.module_category_conciliation"/>
+        </record>
+
+        <record id="group_conciliation_manager" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="category_id" ref="test_conciliation.module_category_conciliation"/>
+            <field name="implied_ids" eval="[Command.link(ref('test_conciliation.group_conciliation_user'))]"/>
+            <field name="users" eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"/>
+        </record>
+
+    </data>
+
+    <data noupdate="1">
+
+        <record id="master_data_rule" model="ir.rule">
+            <field name="name">Master Data</field>
+            <field name="model_id" ref="model_res_master"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="complement_data_rule" model="ir.rule">
+            <field name="name">Complement Data</field>
+            <field name="model_id" ref="model_res_complement"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="concilie_data_rule" model="ir.rule">
+            <field name="name">Reconcilied Data</field>
+            <field name="model_id" ref="model_res_reconciled"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>
