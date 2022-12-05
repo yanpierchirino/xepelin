@@ -37,7 +37,7 @@ class TestdataImportWizard(models.TransientModel):
                 domain = [(k,'=',line[k]) for k in line.keys()]
                 rec = master_obj.search(domain)
                 if rec:
-                    raise ValidationError(_("La linea con los datos %s se encuentra duplicado." % list(line.items())))
+                    raise ValidationError(_("La linea con los datos %s se encuentra creada en el sistema." % list(line.items())))
 
             master_obj.create(values)
         except Exception as e:

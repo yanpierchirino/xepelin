@@ -15,8 +15,8 @@
                 <field name="amount"/>
                 <field name="bank_id"/>
                 <field name="country_id"/>
-                <field name="currency_id"/>
-                <field name="company_id"/>
+                <field name="currency_id" optional="hide"/>
+                <field name="company_id" optional="hide"/>
             </tree>
         </field>
     </record>
